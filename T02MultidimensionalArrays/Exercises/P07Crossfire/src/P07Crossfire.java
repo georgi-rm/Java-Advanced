@@ -11,7 +11,9 @@ public class P07Crossfire {
         int rows = Integer.parseInt(dimensions[0]);
         int columns = Integer.parseInt(dimensions[1]);
 
-        int[][] matrix = generateMatrix(rows, columns);
+        int[][] matrix = new int[rows][columns];
+
+        generateMatrix(matrix);
 
         String input = scanner.nextLine();
         while (!input.equals("Nuke it from orbit")) {
@@ -61,15 +63,12 @@ public class P07Crossfire {
         return row == targetRow && column >= targetColumn - radius && column <= targetColumn + radius;
     }
 
-    private static int[][] generateMatrix(int rows, int columns) {
-        int[][] matrix = new int[rows][columns];
-
+    private static void generateMatrix(int[][] matrix) {
         for (int row = 0; row < matrix.length; row++) {
             for (int column = 0; column < matrix[row].length; column++) {
-                matrix[row][column] = (row * columns) + column + 1;
+                matrix[row][column] = (row * matrix[row].length) + column + 1;
             }
         }
-        return matrix;
     }
 
     private static void printMatrix(int[][] matrix) {
