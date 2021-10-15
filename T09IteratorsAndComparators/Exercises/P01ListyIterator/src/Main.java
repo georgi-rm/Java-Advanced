@@ -14,7 +14,7 @@ public class Main {
 
             switch (command) {
                 case "Create":
-                    String[] initialValues = new String[commandData.length-1];
+                    String[] initialValues = new String[commandData.length - 1];
                     System.arraycopy(commandData, 1, initialValues, 0, initialValues.length);
                     listyIterator = new ListyIterator(initialValues);
                     break;
@@ -24,17 +24,17 @@ public class Main {
                     break;
                 case "Print":
                     assert listyIterator != null;
-                    listyIterator.print();
+                    try {
+                        listyIterator.print();
+                    } catch (IllegalStateException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case "HasNext":
                     assert listyIterator != null;
                     System.out.println(listyIterator.hasNext());
                     break;
             }
-
-
-
-
             input = scanner.nextLine();
         }
     }

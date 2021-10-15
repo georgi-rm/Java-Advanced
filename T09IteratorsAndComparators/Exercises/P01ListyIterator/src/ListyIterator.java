@@ -24,9 +24,8 @@ public class ListyIterator {
     }
 
     public void print() {
-        if (data.size() == 0) {
-            System.out.println("Invalid Operation!");
-            return;
+        if (this.data.size() == 0) {
+            throw new IllegalStateException("Invalid Operation!");
         }
         System.out.println(data.get(index));
     }
