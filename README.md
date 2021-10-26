@@ -1,2 +1,2 @@
 # Java-Advanced
-Exercises from SoftUni Java Advanced course
+Exercises from Java Advanced course at SoftUni
